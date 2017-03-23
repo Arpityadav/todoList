@@ -78,6 +78,22 @@
         </div>
         
     </div>
+
+
+</div>
+
+{{-- Footer section --}}
+
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left">© 2017 - Site Built By 
+            <a href="https://github.com/Arpityadav" target="_blank" >Arpit Yadav</a>
+        </p>
+
+        <a href="https://github.com/Arpityadav/todoList" class="navbar-btn btn-danger btn pull-right">
+            <span class="glyphicon glyphicon-star"></span>  Contribute us at Github
+        </a>
+    </div>
 </div>
 
 @endsection
