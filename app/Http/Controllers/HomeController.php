@@ -30,11 +30,13 @@ class HomeController extends Controller
     public function store ()
     {
         $this->validate(request(), [
-            'title' => 'required|min:2|max:50',
+            'title' => 'required|min:2|max:20',
+            'body' => 'min:5|max:100',
         ]);
         Task::create([
             'user_id' => Auth::id(),
             'title' => request('title'),
+            'body' => request('body'),
         ]);
 
         return back();
