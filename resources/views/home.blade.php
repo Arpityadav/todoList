@@ -16,29 +16,36 @@
                                 @else
                                 <li class="wrap">{{$tasks->title}}
                                 @endif    
-                    <form class="inline" action="/delete/{{$tasks->id}}" method="POST">
-                    <span class="form-group">
-                        {{csrf_field()}}
-                        {{method_field('DELETE')}}
-                        <button type="submit" class="btn btn-danger btn-sm pull-right">Delete Task</button>
-                        
-                    </span>
-                    </form>
-                    <form class="inline" action="/complete/{{ $tasks->id }}" method="POST">                        
-                                {{ csrf_field() }}
-                                <span class="form-group">
-                        <button type="submit" class="btn btn-primary btn-sm pull-right">Completed</button>
-                    </span>
-                    </form>
+                    
+                                    <form class="inline" action="/delete/{{$tasks->id}}" method="POST">
+                                        {{csrf_field()}}
+                                        {{method_field('DELETE')}}
+
+                                        <span class="form-group">
+                                            <button type="submit" class="btn btn-danger btn-sm pull-right">Delete Task</button>    
+                                        </span>
+
+                                    </form>
+
+                                    <form class="inline" action="/complete/{{ $tasks->id }}" method="POST">                        
+                                        {{ csrf_field() }}
+                                                
+                                        <span class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-sm pull-right">Completed</button>
+                                        </span>
+
+                                    </form>
                                 </li>
-                    <br>
+                                <br>
+
                             @endforeach
                         @else
                             <p>You have no tasks!</p>
                         @endif
                     </ul>
                 </div>
-        </div>
+
+            </div>
 
         <div class="panel panel-info">
             
@@ -57,6 +64,7 @@
                         <button type="submit" class="btn btn-success">Add Task</button>
                     </div>
                 </form>
+
                 @if(count($errors))
                 <div class="alert alert-danger">
                     <ul>
@@ -68,10 +76,8 @@
                 @endif
             </div>           
         </div>
-            
+        
     </div>
-</div>
-    
 </div>
 
 @endsection
