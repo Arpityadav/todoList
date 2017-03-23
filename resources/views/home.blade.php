@@ -14,23 +14,7 @@
                                 @if($tasks->isComplete)
                                 <li class="wrap"><strike>{{$tasks->title}}</strike>
                                 @else
-                                <div class="panel-group" id="accordion">
-                
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                                {{$tasks->title}}
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapse2" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            {{$tasks->body}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                <li class="wrap">{{$tasks->title}}
                                 @endif    
                     
                                     <form class="inline" action="/delete/{{$tasks->id}}" method="POST">
@@ -75,10 +59,6 @@
                     <div class="form-group">
                         <label for="title">Task title</label>
                         <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title">
-                    </div>
-                    <div class="form-group">
-                        <label for="body">Task Body (not required)</label>
-                        <textarea name="body" id="body" class="form-control noresize"></textarea>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Add Task</button>
