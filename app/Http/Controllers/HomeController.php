@@ -27,13 +27,29 @@ class HomeController extends Controller
         return view('home', compact('user'));
     }
 
-    public function store (User $user)
+    public function store ()
     {
+        $this->validate(request(), [
+            'title' => 'required|min:2|max:50',
+        ]);
         Task::create([
             'user_id' => Auth::id(),
-            'body' => request('body'),
             'title' => request('title'),
         ]);
+
+        return back();
+    }
+    public function destroy(Task $task)
+    {
+        $this->authorize('destroy', $task);
+        $task->delete();
+     
+        return back();
+    }
+    public function update(Task $task)
+    {
+        $task->isComplete = true;
+        $task->save();
 
         return back();
     }

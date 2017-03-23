@@ -16,6 +16,12 @@
         .noresize {
             resize: none; 
         }
+        .inline{
+            display: inline;
+        }
+        .wrap{
+            word-wrap: break-word;
+        }
     </style>
     <!-- Scripts -->
     <script>
